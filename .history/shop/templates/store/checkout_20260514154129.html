@@ -1,0 +1,100 @@
+{% comment %} {% extends 'store/base.html' %}
+
+{% block title %}Checkout{% endblock %}
+
+{% block content %}
+<h1>Checkout</h1>
+<form method="POST" class="Checkout-form form" >
+  {% csrf_token %}
+
+
+  <label >Full Name</label>
+  <input type="text" name="full_name" required >
+
+  <label>Email</label>
+  <input type="email" name="email" required >
+
+  <label>Address</label>
+  <textarea name="address" required ></textarea>
+  <label>Mobile_no</label>
+  <input type="text" name="Mobile_no" pattern="[0-9]{10}">
+
+  <button class="btn" type="submit">Place Order</button>
+
+
+</form>
+
+{% endblock %} {% endcomment %}
+
+{% extends 'store/base.html' %}
+
+{% block title %}Checkout{% endblock %}
+
+{% block content %}
+
+<div style="max-width: 500px; margin: 40px auto; padding: 30px; background: #f9f9f9; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+
+  <h1 style="text-align: center; margin-bottom: 25px; color: #333;">
+    Checkout
+  </h1>
+
+  <form method="POST" class="Checkout-form form">
+    {% csrf_token %}
+
+    <label style="display:block; margin-bottom:8px; font-weight:bold;">
+      Full Name
+    </label>
+
+    <input 
+      type="text" 
+      name="full_name" 
+      required
+      style="width:100%; padding:12px; margin-bottom:20px; border:1px solid #ccc; border-radius:5px;"
+    >
+
+    <label style="display:block; margin-bottom:8px; font-weight:bold;">
+      Email
+    </label>
+
+    <input 
+      type="email" 
+      name="email" 
+      required
+      style="width:100%; padding:12px; margin-bottom:20px; border:1px solid #ccc; border-radius:5px;"
+    >
+
+    <label style="display:block; margin-bottom:8px; font-weight:bold;">
+      Address
+    </label>
+
+    <textarea 
+      name="address" 
+      required
+      style="width:100%; padding:12px; margin-bottom:20px; border:1px solid #ccc; border-radius:5px; height:100px;"
+    ></textarea>
+
+    <label style="display:block; margin-bottom:8px; font-weight:bold;">
+      Mobile No
+    </label>
+
+    <input 
+      type="text" 
+      name="Mobile_no" 
+      pattern="[0-9]{10}"
+      placeholder="Enter 10 digit number"
+      style="width:100%; padding:12px; margin-bottom:25px; border:1px solid #ccc; border-radius:5px;"
+    >
+
+    <button 
+      class="btn" 
+      type="submit"
+      style="width:100%; padding:12px; background:#007bff; color:white; border:none; border-radius:5px; font-size:16px; cursor:pointer;"
+    >
+      Place Order
+    </button>
+
+  </form>
+
+</div>
+
+{% endblock %}

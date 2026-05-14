@@ -1,0 +1,45 @@
+{% extends 'store/base.html' %}
+{% block title %}Order Placed{% endblock %}
+
+{% block content %}
+<h1>✅ Order placed!</h1>
+<p>Your order id is: <b>#{{ order.id }}</b></p>
+<a href="{% url 'product_list' %}">Continue Shopping</a>
+{% endblock %}
+
+{% extends 'store/base.html' %}
+
+{% block title %}Order Placed{% endblock %}
+
+{% block content %}
+
+<div style="max-width: 500px; margin: 60px auto; padding: 40px; background: #f9f9f9; border-radius: 12px; box-shadow: 0 0 12px rgba(0,0,0,0.1); text-align: center;">
+
+    <h1 style="color: green; margin-bottom: 20px; font-size: 32px;">
+        ✅ Order Placed!
+    </h1>
+
+    <p style="font-size: 18px; color: #333; margin-bottom: 30px;">
+        Your order id is:
+        <b style="color: #007bff;">#{{ order.id }}</b>
+    </p>
+
+    <a 
+        href="{% url 'product_list' %}"
+        style="
+            display: inline-block;
+            padding: 12px 25px;
+            background: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: 0.3s;
+        "
+    >
+        Continue Shopping
+    </a>
+
+</div>
+
+{% endblock %}

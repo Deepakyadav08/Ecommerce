@@ -1,0 +1,97 @@
+{% extends 'store/base.html' %}
+
+{% block title %}{{ product.name }}{% endblock %}
+
+{% block content %}
+
+<div style="
+    max-width:900px;
+    margin:40px auto;
+    background:white;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+">
+
+    <div style="
+        display:flex;
+        flex-wrap:wrap;
+        gap:30px;
+        align-items:center;
+        justify-content:center;
+    ">
+
+        <!-- Product Image -->
+        <div style="flex:1; min-width:300px; text-align:center;">
+
+            {% if product.image_url %}
+            <img 
+                src="{{ product.image_url }}" 
+                alt="{{ product.name }}"
+                style="
+                    width:100%;
+                    max-width:400px;
+                    height:400px;
+                    object-fit:cover;
+                    border-radius:10px;
+                    box-shadow:0 0 10px rgba(0,0,0,0.1);
+                "
+            >
+            {% endif %}
+
+        </div>
+
+        <!-- Product Details -->
+        <div style="flex:1; min-width:300px;">
+
+            <h1 style="
+                color:#222;
+                margin-bottom:20px;
+                font-size:36px;
+            ">
+                {{ product.name }}
+            </h1>
+
+            <p style="
+                font-size:28px;
+                color:green;
+                font-weight:bold;
+                margin-bottom:20px;
+            ">
+                ₹ {{ product.price }}
+            </p>
+
+            <p style="
+                color:#555;
+                line-height:1.8;
+                font-size:17px;
+                margin-bottom:30px;
+            ">
+                {{ product.description }}
+            </p>
+
+            <!-- Add to Cart Button -->
+            <a 
+                class="btn"
+                href="{% url 'add_to_cart' product.id %}"
+                style="
+                    display:inline-block;
+                    background:#007bff;
+                    color:white;
+                    padding:14px 25px;
+                    text-decoration:none;
+                    border-radius:6px;
+                    font-size:18px;
+                    font-weight:bold;
+                "
+            >
+                Add to Cart
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

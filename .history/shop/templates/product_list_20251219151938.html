@@ -1,0 +1,24 @@
+{% extends 'store/base.html' %}
+{% block title %}Products{% endblock %}
+
+{% block content %}
+<h1>Products</h1>
+
+<div class="grid">
+  {% for p in products %}
+    <div class="card">
+      <h3>{{ p.name }}</h3>
+      <p>₹ {{ p.price }}</p>
+
+      {% if p.image_url %}
+        <img src="{{ p.image_url }}" alt="{{ p.name }}" class="img">
+      {% endif %}
+
+      <a href="{% url 'product_detail' p.id %}">View</a>
+      <a class="btn" href="{% url 'add_to_cart' p.id %}">Add to Cart</a>
+    </div>
+  {% empty %}
+    <p>No products found. Add products from admin.</p>
+  {% endfor %}
+</div>
+{% endblock %}

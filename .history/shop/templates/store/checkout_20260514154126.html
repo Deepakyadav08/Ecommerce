@@ -1,0 +1,27 @@
+{% comment %} {% extends 'store/base.html' %}
+
+{% block title %}Checkout{% endblock %}
+
+{% block content %}
+<h1>Checkout</h1>
+<form method="POST" class="Checkout-form form" >
+  {% csrf_token %}
+
+
+  <label >Full Name</label>
+  <input type="text" name="full_name" required >
+
+  <label>Email</label>
+  <input type="email" name="email" required >
+
+  <label>Address</label>
+  <textarea name="address" required ></textarea>
+  <label>Mobile_no</label>
+  <input type="text" name="Mobile_no" pattern="[0-9]{10}">
+
+  <button class="btn" type="submit">Place Order</button>
+
+
+</form>
+
+{% endblock %} {% endcomment %}
