@@ -128,5 +128,3 @@ STATICFILES_DIRS = [
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-ALLOWED_HOSTS = ['ecommerce-zrhv.onrender.com', '127.0.0.1', 'localhost']
-DEBUG = False
